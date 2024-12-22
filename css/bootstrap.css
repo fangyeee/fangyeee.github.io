@@ -6564,3 +6564,10 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.center-type {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto; /* centers the block element */
+  border: 1px solid blue;
+}
