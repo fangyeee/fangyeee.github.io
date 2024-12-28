@@ -8,24 +8,38 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">湾区古筝教学</a>
+            <a class="navbar-brand page-scroll description" lang="zh" href="#page-top">湾区古筝教学</a>
+            <a class="navbar-brand page-scroll description" lang="en" href="#page-top">Bay Area Guzheng Class</a>
         </div>
 
+        
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" lang="en">About</a>
-                    <a class="page-scroll" lang="ch">关于</a>
+                    <a class="page-scroll description" lang="zh" href="javascript:switchLanguage('en')">English</a>
+                </li>
+                <li >
+                    <a class="page-scroll description" lang="en" href="javascript:switchLanguage('zh')">中文</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">Services</a>
+                    <a class="page-scroll description" lang="en" href="#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    <a class="page-scroll description" lang="zh" href="#about">关于我们</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll description" lang="en" href="#services">Class</a>
+                </li>
+                <li>
+                    <a class="page-scroll description" lang="zh" href="#services">教学课程</a>
+                </li>
+                <li>
+                    <a class="page-scroll description" lang="en" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll description" lang="zh" href="#portfolio">教学展示</a>
                 </li>
             </ul>
         </div>
@@ -35,22 +49,29 @@
 </nav>
 
 <script>
-    $('[lang]').hide(); // hide all lang attributes on start.
-    $('[lang="ko"]').show(); // show just Korean text (you can change it)
-    $('#lang-switch').change(function () { // put onchange event when user select option from select
-        var lang = $(this).val(); // decide which language to display using switch case. The rest is obvious (i think)
-        switch (lang) {
-            case 'en':
-                $('[lang]').hide();
-                $('[lang="en"]').show();
-            break;
-            case 'ko':
-                $('[lang]').hide();
-                $('[lang="ko"]').show();
-            break;
-            default:
-                $('[lang]').hide();
-                $('[lang="ko"]').show();
+    function switchLanguage(lang) {
+        const elements = document.getElementsByClassName("description");
+
+        // Convert HTMLCollection to array
+        const text = Array.from(elements);
+        text.forEach(element => {
+            console.log(element);
+            if (element.lang == lang) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
             }
+        });
+        // Hide all elements with lang attributes
+        // document.querySelectorAll('[lang]').forEach(element => {
+        //     element.style.display = 'none';
+        // });
+        // // Show elements matching the selected language
+        // document.querySelectorAll(`[lang="${lang}"]`).forEach(element => {
+        //     element.style.display = 'block';
+        // });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        switchLanguage('zh'); // Default to Chinese
     });
-    </script>
+</script>
