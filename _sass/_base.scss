@@ -187,6 +187,7 @@ header {
         .header-content {
             position: absolute;
             top: 50%;
+            color: #c6dbd7;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
@@ -196,6 +197,7 @@ header {
                 margin-left: auto;
                 margin-right: auto;
                 p {
+                    color: #c6dbd7;
                     font-size: 18px;
                     max-width: 80%;
                     margin-left: auto;
