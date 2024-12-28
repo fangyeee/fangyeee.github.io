@@ -15,7 +15,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#about">About</a>
+                    <a class="page-scroll" lang="en">About</a>
+                    <a class="page-scroll" lang="ch">关于</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#services">Services</a>
@@ -32,3 +33,24 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+
+<script>
+    $('[lang]').hide(); // hide all lang attributes on start.
+    $('[lang="ko"]').show(); // show just Korean text (you can change it)
+    $('#lang-switch').change(function () { // put onchange event when user select option from select
+        var lang = $(this).val(); // decide which language to display using switch case. The rest is obvious (i think)
+        switch (lang) {
+            case 'en':
+                $('[lang]').hide();
+                $('[lang="en"]').show();
+            break;
+            case 'ko':
+                $('[lang]').hide();
+                $('[lang="ko"]').show();
+            break;
+            default:
+                $('[lang]').hide();
+                $('[lang="ko"]').show();
+            }
+    });
+    </script>
