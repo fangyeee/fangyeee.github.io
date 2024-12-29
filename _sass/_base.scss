@@ -43,7 +43,8 @@ p {
 }
 
 .bg-primary {
-    background-color: $theme-primary;
+    // background-color: $theme-primary;
+    background-color: rgb(59, 133, 199);
 }
 
 .bg-dark {
@@ -99,6 +100,7 @@ aside {
             &.active {
                 > a,
                 > a:focus {
+                    
                     color: $theme-primary !important;
                     background-color: transparent;
                     &:hover {
@@ -109,10 +111,12 @@ aside {
         }
     }
     @media (min-width: 768px) {
-        background-color: transparent;
-        border-color: rgba(white, .3);
+        // background-color: transparent;
+        background-color: rgba(black, 0.5);
+        border-color: rgba(black, .5);
         .navbar-header .navbar-brand {
-            color: rgba(white, .7);
+            color: rgba(white, .8);
+            // color: rgba(black, 0.7);
             &:hover,
             &:focus {
                 color: white;
@@ -120,7 +124,7 @@ aside {
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: rgba(white, .7);
+            color: rgba(white, .8);
             &:hover {
                 color: white;
             }
